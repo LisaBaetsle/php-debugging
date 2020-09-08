@@ -175,4 +175,12 @@ for ($i = 0; $i <= count($areTheseFruits) + 1; $i++) {
     unset($areTheseFruits[$i]);
   }
 }
-var_dump($areTheseFruits);//do not change this
+var_dump($areTheseFruits); //do not change this
+
+new_exercise(11);
+// Bonus round
+// Below are 5 characters (the space included)
+// Find out why the substring with limit 10 still shortens the string, and what might be a solution (not easy)
+$str = "안녕 세상";
+echo mb_substr($str, 0, 10, "UTF-8");
+/* mb = MULTIBYTE STRING FUNCTION. In ISO 8859-1 Arabic is not a 8-bit character set. The substr() calls the internal libc functions which work on sets of 8-bit chars. To display characters higher then 255 (Arabic, Cyclic, Korean, etc..) there are more bits needed to display that character, for example 16 or sometimes even 32-bits. You subtract 3*8-bits which will result in some undisplayable character in UTF-8. Especially if you're going to use a lot of multibyte strings, make sure you use the correct string functions such as mb_strlen() */
