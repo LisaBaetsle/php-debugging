@@ -56,8 +56,10 @@ new_exercise(5);
 // Fix the code so the for loop only pushes a-z in the array
 
 $arr = [];
-for ($i = 65; $i < 91; $i++) {
-  $arr[] = chr($i);
+$letter = 'a';
+for ($i = 0; $i <= 25; $i++) {
+  array_push($arr, $letter);
+  $letter++;
 }
 
 print_r($arr); // Array ([0] => a, [1] => b, [2] => c, ...) a-z alphabetical array
@@ -111,13 +113,13 @@ function randomHeroName()
 echo ("Here is the name: " . combineNames());
 
 new_exercise(7);
-function copyright($year)
+function copyright(int $year)
 {
   echo "&copy; $year BeCode";
 }
 
 //print the copyright
-copyright(date("Y"));
+copyright((int)date("Y"));
 
 ///
 ///
@@ -170,7 +172,8 @@ new_exercise(10);
 $areTheseFruits = ['apple', 'bear', 'beef', 'banana', 'cherry', 'tomato', 'car'];
 $validFruits = ['apple', 'pear', 'banana', 'cherry', 'tomato'];
 //from here on you can change the code
-for ($i = 0; $i <= count($areTheseFruits) + 1; $i++) {
+$length = count($areTheseFruits);
+for ($i = 0; $i < $length; $i++) {
   if (!in_array($areTheseFruits[$i], $validFruits)) {
     unset($areTheseFruits[$i]);
   }
