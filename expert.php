@@ -111,13 +111,68 @@ function randomHeroName()
 echo ("Here is the name: " . combineNames());
 
 new_exercise(7);
-function copyright(int $year)
+function copyright($year)
 {
-  return "&copy; $year BeCode";
+  echo "&copy; $year BeCode";
 }
+
 //print the copyright
-copyright(date('Y'));
+copyright(date("Y"));
 
 ///
 ///
 ///
+
+new_exercise(8);
+function login(string $email, string $password)
+{
+  if ($email == 'john@example.be' && $password == 'pocahontas') {
+    return 'Welcome John Smith';
+  }
+  return 'No access';
+}
+/* do not change any code below */
+//should greet the user with his full name (John Smith)
+echo login('john@example.be', 'pocahontas');
+//Should say: no access
+echo login('john@example.be', 'dfgidfgdfg');
+//Should say: no access
+echo login('wrong@example', 'wrong');
+/* You can change code again */
+
+
+new_exercise(9);
+function isLinkValid(string $link)
+{
+  $unacceptables = array('https:', '.doc', '.pdf', '.jpg', '.jpeg', '.gif', '.bmp', '.png');
+
+  foreach ($unacceptables as $unacceptable) {
+    if (strpos($link, $unacceptable) !== false) {
+      return 'Unacceptable Found<br />';
+    }
+  }
+  return 'Acceptable<br />';
+}
+//invalid link
+echo isLinkValid('http://www.google.com/hack.pdf');
+//invalid link
+echo isLinkValid('https://google.com');
+//VALID link
+echo isLinkValid('http://google.com');
+//VALID link
+echo isLinkValid('http://google.com/test.txt');
+
+
+new_exercise(10);
+
+//Filter the array $areTheseFruits to only contain valid fruits
+//do not change the arrays itself
+$areTheseFruits = ['apple', 'bear', 'beef', 'banana', 'cherry', 'tomato', 'car'];
+$validFruits = ['apple', 'pear', 'banana', 'cherry', 'tomato'];
+//from here on you can change the code
+for ($i = 0; $i <= count($areTheseFruits) + 1; $i++) {
+  if (!in_array($areTheseFruits[$i], $validFruits)) {
+    unset($areTheseFruits[$i]);
+  }
+}
+var_dump($areTheseFruits);//do not change this
